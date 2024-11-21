@@ -38,14 +38,14 @@ a = float(input("Sisestage külje a pikkus (meetrites): "))
 b = float(input("Sisestage külje b pikkus (meetrites): "))
 
 d = sqrt(a**2 + b**2)
-print(f"Ristkülikukujulise maatüki diagonaal on: {d}m")
+print(f"Ristkülikukujulise maatüki diagonaal on: {round(d,2)}m")
 
 #Ülesanne 6
 aeg = float(input("Mitu tundi kulus sõiduks? "))
 teepikkus = float(input("Mitu kilomeetrit sõitsid? "))
 kiirus = teepikkus / aeg
 
-print("Sinu kiirus oli " + str(kiirus) + " km/h")
+print(f"Sinu kiirus oli " + str(round(kiirus,2)) + " km/h")
 
 #Ülesanne 7
 print("Peate sisestama 5 täisarvu")
@@ -69,16 +69,16 @@ print(f"    /)/) \n   (O.O)\n  (,)_(,) \n  (^)_(^)")
 print("Arvutame kolmnurga ümbermõõdu: ")
 print("Matemaatikast teame, et ümbermõõdu valem on P = a + b + c: ")
 
-a1 = int(input("Sisesta a: "))
-b1 = int(input("Sisesta b: "))
-c1 = int(input("Sisesta c: "))
+a1 = float(input("Sisesta a: "))
+b1 = float(input("Sisesta b: "))
+c1 = float(input("Sisesta c: "))
 
 P = a1 + b1 + c1
-print(input(f"Kolmnurga ümbermõõt on: {P}"))
+print(input(f"Kolmnurga ümbermõõt on: {round(P,2)}"))
 
 #Ülesanne 10
 print(f"Võtsime Zhenjaga pitsat! \n Pitsa maksis meile 12.90€")
-tips = 12.90 * 0.1
-maks = (12.90 + tips)/ 2
+tips = float(12.90 * 0.1)
+maks = float((12.90 + tips)/ 2)
 print(input(f"Igaüks meist peab maksma {round(maks,2)}€, sest peale pitsa rahat, me andsime veel {tips}€ jooraha!"))
 
