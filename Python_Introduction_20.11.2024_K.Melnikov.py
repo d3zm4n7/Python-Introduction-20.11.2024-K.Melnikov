@@ -26,9 +26,59 @@ from math import * #pi kastutamiseks
 # print(f"Jääk on {kokku} kommi")
 
 #Ülesanne 4
-print("Läbimõõdu leidmine ")
-#l-ümbermõõt
-l=float(input("Ümbermõõt: "))
-#d-läbimõõt
-d=l/pi
-print(f"Läbimõõdu suurus on {round(d,2)}")
+# print("Läbimõõdu leidmine ")
+# #l-ümbermõõt
+# l=float(input("Ümbermõõt: "))
+# #d-läbimõõt
+# d=l/pi
+# print(f"Läbimõõdu suurus on {round(d,2)}")
+
+#Ülesanne 5
+a = float(input("Sisestage külje a pikkus (meetrites): "))
+b = float(input("Sisestage külje b pikkus (meetrites): "))
+
+d = sqrt(a**2 + b**2)
+print(f"Ristkülikukujulise maatüki diagonaal on: {d}m")
+
+#Ülesanne 6
+aeg = float(input("Mitu tundi kulus sõiduks? "))
+teepikkus = float(input("Mitu kilomeetrit sõitsid? "))
+kiirus = teepikkus / aeg
+
+print("Sinu kiirus oli " + str(kiirus) + " km/h")
+
+#Ülesanne 7
+print("Peate sisestama 5 täisarvu")
+
+a = int(input("Sisesta esimest täisarvu: "))
+b = int(input("Sisesta teist täisarvu: "))
+c = int(input("Sisesta kolmandat täisarvu: "))
+d = int(input("Sisesta neljat täisarvu: "))
+e = int(input("Sisesta viiet täisarvu: "))
+
+keskmine = (a + b + c + d + e) / 5
+print(input(f"Teie sisestatud numbrites keskmine on: {keskmine}"))
+
+#Ülesanne 8
+print(input("Kas tahate, ma näitan teile konna?"))
+print(f"    @..@ \n   (----)\n  ( \__/ )\n   ^^ "" ^^")
+print(input("Kas tahate, ma näitan veel teile midagi :)?"))
+print(f"    /)/) \n   (O.O)\n  (,)_(,) \n  (^)_(^)")
+
+#Ülesanne 9
+print("Arvutame kolmnurga ümbermõõdu: ")
+print("Matemaatikast teame, et ümbermõõdu valem on P = a + b + c: ")
+
+a1 = int(input("Sisesta a: "))
+b1 = int(input("Sisesta b: "))
+c1 = int(input("Sisesta c: "))
+
+P = a1 + b1 + c1
+print(input(f"Kolmnurga ümbermõõt on: {P}"))
+
+#Ülesanne 10
+print(f"Võtsime Zhenjaga pitsat! \n Pitsa maksis meile 12.90€")
+tips = 12.90 * 0.1
+maks = (12.90 + tips)/ 2
+print(input(f"Igaüks meist peab maksma {round(maks,2)}€, sest peale pitsa rahat, me andsime veel {tips}€ jooraha!"))
+
