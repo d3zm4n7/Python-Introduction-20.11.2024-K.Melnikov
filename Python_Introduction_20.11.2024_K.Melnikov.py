@@ -6,9 +6,15 @@ from math import * #pi kastutamiseks
 # nimi=input("What's your name?").capitalize() #lower()-aaa, #upper()-AAA #capitalize()-Aaa
 # print("Hello World! Greeetings! How's your day", nimi, "?")
 # print("Hello World! Greeetings! How's your day "+ nimi, "?")
-# vanus=int(input("How old are you? "))
-# print("Hello World! Greetings! "+nimi+" You're",vanus, "years old!")
-# print(f"\tHello World! \nGreetings! {nimi} You're {vanus} years old!") #f даёт возможность использовать фигурные скобки, \t Красная строка \n Новая строка
+# try:
+#   vanus=int(input("How old are you? "))
+#   print("Hello World! Greetings! "+nimi+" You're",vanus, "years old!")
+#   print(f"\tHello World! \nGreetings! {nimi} You're {vanus} years old!") #f даёт возможность использовать фигурные скобки, \t Красная строка \n Новая строка
+# except:
+#   print("On vaja numbreid sisestada!")
+
+
+
 
 
 #Ülesanne 2
