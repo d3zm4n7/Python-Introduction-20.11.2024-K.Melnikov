@@ -1,7 +1,9 @@
+from calendar import c
 from datetime import *
 from math import *
 from calendar import *
 from random import *
+from re import A
 
 # #Ülesanne 1
 # paevadekogus=monthrange(2024,03)[1] #calendar funktsioonid
@@ -48,10 +50,21 @@ from random import *
 #     print("On vaja sisestada numbri!")
 
 #VARIANT2
-R=random()*100 #0.0...1.0 R=int(random()*100) R=round(random()*100)
-print(f"R={R}")
-Sk=pi*R**2
-Lk=2*pi*R
-Skv=(2*R)**2
-Lkv=(2*R)*4
-print(f"Ringi pindala on {Sk}\nRingu ümbermõõt pn {Lk}\nRuudu pindala on {Skv}\nRuudu ümbermõõt on {Lkv}")
+# R=random()*100 #0.0...1.0 R=int(random()*100) R=round(random()*100)
+# print(f"R={R}")
+# Sk=pi*R**2
+# Lk=2*pi*R
+# Skv=(2*R)**2
+# Lkv=(2*R)*4
+# print(f"Ringi pindala on {Sk}\nRingu ümbermõõt pn {Lk}\nRuudu pindala on {Skv}\nRuudu ümbermõõt on {Lkv}")
+
+#Ülesanne 4
+# d=2.575 # mündi d sm
+# maa=6378 # maaradius km
+# maa*=100000 # maaradius sm + maa=maa*100000
+# Lmaa=2*pi*maa
+# kogus=int(Lmaa/d) #
+# print(f"On vaja {kogus} mündi!\nMeil on vaja {kogus*2} eur")
+
+#Ülesanne 5
+sõna1 = "Kill-koll"
