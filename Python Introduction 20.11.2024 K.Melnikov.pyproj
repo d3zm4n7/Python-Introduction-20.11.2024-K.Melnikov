@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Python_Introduction_20.11.2024_K.Melnikov.py</StartupFile>
+    <StartupFile>Tund2(Datetime_Try_Except).py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Python_Introduction_20.11.2024_K.Melnikov.py" />
+    <Compile Include="Tund2%28Datetime_Try_Except%29.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
