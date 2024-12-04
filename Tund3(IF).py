@@ -58,3 +58,44 @@
 #         print("Ei saa aru!")
 # except:
 #     print("Numbrid!!!")
+
+# #Ülesanne 4
+# hind = float(input("Sisesta toote hind: "))
+# if hind > 700:
+#     soodukas = hind * 0.3
+#     uus_hind = hind - soodukas
+#     print(f"Soodustus on {soodukas:.2f} eurot. Lõpphind on {uus_hind:.2f} eurot.")
+# else:
+#     print("Soodust ei ole!")
+        
+# #Ülesanne 5
+# temp = float(input("Sisesta temperatuuri: "))
+
+# if temp < 18:
+#     print(f"Temperatuur on {temp}! ")
+# else:
+#     print(f"Temperatuur on {temp}, see on rohkem kui keskmine talve toa temperatuur!")
+
+# #Ülesanne 6
+# pikkus = float(input("Sisesta enda pikkust: "))
+# if pikkus < 150:
+#     print("Sa oled väike mummi :D")
+# elif pikkus <180:
+#     print("Sul on tavalise inimese pikkus!")
+# elif pikkus <200:
+#     print("Sa oled päris pikk! :O")
+
+#Ülesanne 7 - Küsi inimeselt pikkus ja sugu ning teata, kas ta on lühike, keskmine või pikk (mitu tingimusplokki võib olla üksteise sees).
+try:
+    pikkus2 = float(input("Sisesta enda pikkust: "))
+    sugu = str(input("Sisesta enda sugu: (M/N)"))
+    if sugu.upper = "M"
+        
+    if pikkus2 < 150:
+      print("Sa oled väike mummi :D")
+    elif pikkus2 <180:
+        print("Sul on tavalise inimese pikkus!")
+    elif pikkus2 <200:
+        print("Sa oled päris pikk! :O")
+except:
+    print("Sisestasid valed andmed, ai ai ai!")
