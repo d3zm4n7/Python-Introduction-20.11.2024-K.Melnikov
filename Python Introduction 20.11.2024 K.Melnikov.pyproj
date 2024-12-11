@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tund3(IF).py</StartupFile>
+    <StartupFile>Tund4(kordused).py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Tund4%28kordused%29.py" />
     <Compile Include="Tund3%28IF%29.py" />
     <Compile Include="Tund1%28Math_Random_print_input%29.py" />
     <Compile Include="Tund2%28Datetime_Try_Except%29.py" />
