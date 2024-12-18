@@ -5,7 +5,7 @@ print("Добро пожаловать в программу проверки з
 print("Выберите уровень сложности:")
 print("1 - Сложение и вычитание")
 print("2 - Сложение, вычитание и умножение")
-print("3 - Все действия (+, -, *, /)")
+print("3 - Все действия (+, -, *, /, **)")
 
 while True:
     level = input("Введите уровень сложности (1, 2, 3): ")
@@ -27,7 +27,7 @@ for i in range(num_problems):
     elif level == 2:
         operation = random.choice(["+", "-", "*"])
     else:
-        operation = random.choice(["+", "-", "*", "/"])
+        operation = random.choice(["+", "-", "*", "/", "**"])
         if operation == "/":
             b = random.randint(1, 10)
             a = b * random.randint(1, 5)
@@ -40,6 +40,8 @@ for i in range(num_problems):
         correct = a * b
     elif operation == "/":
         correct = a / b
+    elif operation == "**":
+        correct = a ** b
 
     print(f"Пример {i+1}: {a} {operation} {b} = ?")
     user_answer = float(input("Ваш ответ: "))
