@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Iseseisvanetöö.py</StartupFile>
+    <StartupFile>Tund6(list).py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,7 @@
     <Compile Include="Discount.py" />
     <Compile Include="Sirakus.py" />
     <Compile Include="Matemaatika.py" />
+    <Compile Include="Tund6%28list%29.py" />
     <Compile Include="Valiklaused.py" />
     <Compile Include="Tund4%28kordused%29.py" />
     <Compile Include="Tund3%28IF%29.py" />
