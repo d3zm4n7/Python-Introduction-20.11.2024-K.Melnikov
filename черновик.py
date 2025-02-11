@@ -1,4 +1,4 @@
-import datetime
+﻿import datetime
 
 def validate_isikukood(isikukood_input):
     """Проверяет корректность личного кода и возвращает его числовое представление или ошибку."""

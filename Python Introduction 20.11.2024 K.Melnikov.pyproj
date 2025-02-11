@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tund7(def).py</StartupFile>
+    <StartupFile>Isikukood.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Iseseisvanetoo2kodutoo.py" />
+    <Compile Include="Isikukood - Copy.py" />
     <Compile Include="Isikukood.py" />
+    <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="черновик.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="test.pyw" />
     <Compile Include="TundModule.py" />
     <Compile Include="Tund5%28IseseisvanetööVideo%29.py" />
