@@ -129,7 +129,7 @@ def viktoriin(sõnastik:dict):
     """
     print("\n--- Tere tulemast viktoriini! ---\nTeile esitatakse juhuslikke küsimusi, kas riigi või pealinna kohta\n")
     õiged_vastused=0
-    for i in range(5):
+    for i in range(10):
         riik,pealinn=choice(list(sõnastik.items()))   # Выбираем случайную пару "страна - столица"  (choice не работает с .items() --> переделала в list)
         valik=choice(["riik","pealinn"])  # Случайным образом решаем, что спрашивать у пользователя - страну или столицу
         if valik=="riik":
@@ -147,5 +147,5 @@ def viktoriin(sõnastik:dict):
             else:
                 print(f"Vale! Õige vastus: {pealinn}")
 
-    tulemus=round((õiged_vastused/5)*100)
+    tulemus=round((õiged_vastused/10)*100)
     print(f"\nTeie tulemus: {tulemus}% õigetest vastustest!")
