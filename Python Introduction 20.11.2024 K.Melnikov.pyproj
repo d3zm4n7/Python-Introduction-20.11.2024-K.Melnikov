@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Isikukood.py</StartupFile>
+    <StartupFile>Tund8(Sõnastikud)\8. Tund (Euroopa riigid).py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,28 +21,41 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Iseseisvanetoo2kodutoo.py" />
-    <Compile Include="Isikukood - Copy.py" />
+    <Compile Include="Tund8%28Sõnastikud%29\8. Tund %28Euroopa riigid%29.py" />
+    <Compile Include="Tund8%28Sõnastikud%29\Euroopa_Liigid_Module.py" />
+    <Compile Include="Tund6\Iseseisvanetoo2kodutoo.py" />
+    <Compile Include="Tund6\Isikukood - whiletrue.py" />
     <Compile Include="Isikukood.py" />
     <Compile Include="module1.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="черновик.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test.pyw" />
-    <Compile Include="TundModule.py" />
-    <Compile Include="Tund5%28IseseisvanetööVideo%29.py" />
+    <Compile Include="MyModule.py" />
+    <Compile Include="SignUp and Login.py" />
+    <Compile Include="Tund7%28Def%29\TundModule.py" />
+    <Compile Include="Tund5\Tund5%28IseseisvanetööVideo%29.py" />
     <Compile Include="Discount.py" />
-    <Compile Include="Sirakus.py" />
-    <Compile Include="Matemaatika.py" />
-    <Compile Include="Tund6%28list%29.py" />
-    <Compile Include="Tund7%28def%29.py" />
-    <Compile Include="Valiklaused.py" />
-    <Compile Include="Tund4%28kordused%29.py" />
-    <Compile Include="Tund3%28IF%29.py" />
-    <Compile Include="Tund1%28Math_Random_print_input%29.py" />
-    <Compile Include="Tund2%28Datetime_Try_Except%29.py" />
+    <Compile Include="Tund3\Sirakus.py" />
+    <Compile Include="Tund6\Matemaatika.py" />
+    <Compile Include="Tund6\Tund6%28list%29.py" />
+    <Compile Include="Tund7%28Def%29\Tund7%28def%29.py" />
+    <Compile Include="Tund7%28Def%29\Valiklaused.py" />
+    <Compile Include="Tund4\Tund4%28kordused%29.py" />
+    <Compile Include="Tund3\Tund3%28IF%29.py" />
+    <Compile Include="Tund1\Tund1%28Math_Random_print_input%29.py" />
+    <Compile Include="Tund2\Tund2%28Datetime_Try_Except%29.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tund8%28Sõnastikud%29\" />
+    <Folder Include="Tund7%28Def%29\" />
+    <Folder Include="Tund6\" />
+    <Folder Include="Tund5\" />
+    <Folder Include="Tund4\" />
+    <Folder Include="Tund3\" />
+    <Folder Include="Tund2\" />
+    <Folder Include="Tund1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tund8%28Sõnastikud%29\riigid_pealinnad.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
