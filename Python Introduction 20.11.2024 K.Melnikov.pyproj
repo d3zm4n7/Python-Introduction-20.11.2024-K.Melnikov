@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tund8(Sõnastikud)\8. Tund (Euroopa riigid).py</StartupFile>
+    <StartupFile>Tund11(Tkinter).py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Tund11%28Tkinter%29.py" />
     <Compile Include="Tund8%28Sõnastikud%29\8. Tund %28Euroopa riigid%29.py" />
     <Compile Include="Tund8%28Sõnastikud%29\Euroopa_Liigid_Module.py" />
     <Compile Include="Tund6\Iseseisvanetoo2kodutoo.py" />
@@ -43,8 +44,10 @@
     <Compile Include="Tund3\Tund3%28IF%29.py" />
     <Compile Include="Tund1\Tund1%28Math_Random_print_input%29.py" />
     <Compile Include="Tund2\Tund2%28Datetime_Try_Except%29.py" />
+    <Compile Include="Tund10graafilineliides.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Tund9%28Graafiline liides%29\" />
     <Folder Include="Tund8%28Sõnastikud%29\" />
     <Folder Include="Tund7%28Def%29\" />
     <Folder Include="Tund6\" />
