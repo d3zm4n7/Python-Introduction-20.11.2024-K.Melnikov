@@ -4,13 +4,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tund11(Tkinter).py</StartupFile>
+    <StartupFile>Ruutvorrandi_lahendamine_(Tkinter).py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Python Introduction 20.11.2024 K.Melnikov</Name>
     <RootNamespace>Python Introduction 20.11.2024 K.Melnikov</RootNamespace>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Tund11%28Tkinter%29.py" />
+    <Compile Include="Ruutvorrandi_lahendamine_Matplotlib_def.py" />
+    <Compile Include="Ruutvorrandi_lahendamine_%28Tkinter%29.py" />
+    <Compile Include="Tund9%28Graafiline liides%29\Tund11%28Tkinter%29.py" />
     <Compile Include="Tund8%28Sõnastikud%29\8. Tund %28Euroopa riigid%29.py" />
     <Compile Include="Tund8%28Sõnastikud%29\Euroopa_Liigid_Module.py" />
     <Compile Include="Tund6\Iseseisvanetoo2kodutoo.py" />
@@ -44,7 +47,8 @@
     <Compile Include="Tund3\Tund3%28IF%29.py" />
     <Compile Include="Tund1\Tund1%28Math_Random_print_input%29.py" />
     <Compile Include="Tund2\Tund2%28Datetime_Try_Except%29.py" />
-    <Compile Include="Tund10graafilineliides.py" />
+    <Compile Include="Tund9%28Graafiline liides%29\Tund10graafilineliides.py" />
+    <Compile Include="Tund9%28Graafiline liides%29\module1.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tund9%28Graafiline liides%29\" />
@@ -59,6 +63,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tund8%28Sõnastikud%29\riigid_pealinnad.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.9</Version>
+      <Description>env1 (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>0.0</Version>
+      <Description>env (Python 3.13 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
