@@ -2,6 +2,8 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 
+from PIL import Image, ImageTk
+
 def funktsiooni_lahendamine(a, b, c):
     """Решение функции ax^2 + bx + c = 0"""
 
@@ -12,7 +14,7 @@ def funktsiooni_lahendamine(a, b, c):
         x = round(-b / (2*a), 2)
         return f"D={D}\nX={x}"
     else:
-        x1 = round((-b + math.sqrt(D)) / (2*a), 2)
+        x1 = round((-b + math.sqrt(D)) / (2*a), 2) #tochka perese4enija
         x2 = round((-b - math.sqrt(D)) / (2*a), 2)
         return f"D={D}\nX1={x1}\nX2={x2}"
 

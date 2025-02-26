@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 from Ruutvorrandi_lahendamine_Matplotlib_def import *
 
 def sisend_kontroll():
@@ -27,8 +28,12 @@ def graafik():
 # Окно
 aken = Tk()
 aken.geometry("550x200")
+aken.resizable(False,False) #x=False y=False disables resize of the programm window
 aken.title("Квадратные уравнения")
 aken.configure(bg="beige")
+
+# Add background picture
+
 
 # Заголовок
 pealkiri = Label(aken, text="Решение квадратного уравнения", font=("Times New Roman", 20), fg="darkslategray", bg="lightgoldenrodyellow")
