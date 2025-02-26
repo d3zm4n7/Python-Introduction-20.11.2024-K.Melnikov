@@ -2,7 +2,6 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 
-from PIL import Image, ImageTk
 
 def funktsiooni_lahendamine(a, b, c):
     """Решение функции ax^2 + bx + c = 0"""

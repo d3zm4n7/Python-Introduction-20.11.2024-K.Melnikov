@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from Ruutvorrandi_lahendamine_Matplotlib_def import *
+from PIL import Image, ImageTk
 
 def sisend_kontroll():
     """Проверяет заполненность полей ввода"""
