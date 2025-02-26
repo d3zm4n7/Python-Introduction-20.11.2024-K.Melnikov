@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Ruutvorrandi_lahendamine_(Tkinter).py</StartupFile>
+    <StartupFile>emailli_saatmine.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="emailli_saatmine.py" />
     <Compile Include="Ruutvorrandi_lahendamine_Matplotlib_def.py" />
     <Compile Include="Ruutvorrandi_lahendamine_%28Tkinter%29.py" />
     <Compile Include="Tund9%28Graafiline liides%29\Tund11%28Tkinter%29.py" />
