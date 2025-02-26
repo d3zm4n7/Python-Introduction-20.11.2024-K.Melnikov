@@ -1,15 +1,16 @@
-﻿import tkinter as tk
+﻿from tkinter import *
 
 
 # Окно
-window = tk()
+window = Tk()
 window.geometry("550x200")
 window.resizable(False,False) #x=False y=False disables resize of the programm window
-window.title("Квадратные уравнения")
+window.title("Compose new E-mail")
 window.configure(bg="beige")
 
 
-lbl_email = tk.label(window, text="E-mail:")
-lbl_sub = tk.label(window, text="Subject:")
-lbl_attach = tk.label(window, text="Attach File:")
+
+lbl_emailto = Label(window, text="E-mail:", font=("Times New Roman", 20), fg="darkgreen", bg="lightgoldenrodyellow")
+lbl_sub = Label(window, text="Subject:", font=("Times New Roman", 20), fg="darkgreen", bg="lightgoldenrodyellow")
+lbl_attach = Label(window, text="Attach File:", font=("Times New Roman", 20), fg="darkslategray", bg="lightgoldenrodyellow")
 
