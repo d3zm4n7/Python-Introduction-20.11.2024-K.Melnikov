@@ -25,6 +25,25 @@ def graafik():
     except:
         tulemus.configure(text="Ошибка ввода!")
 
+def entryColor(event): # event = sobytie 
+    i=sisesta_a.get()
+    if i== "":
+        sisesta_a.configure(bg="red")
+    else:
+        sisesta_a.configure(bg="green")
+
+    i=sisesta_b.get()
+    if i== "":
+        sisesta_b.configure(bg="red")
+    else:
+        sisesta_b.configure(bg="green")
+
+    i=sisesta_c.get()
+    if i== "":
+        sisesta_c.configure(bg="red")
+    else:
+        sisesta_c.configure(bg="green")
+
 # Окно
 aken = Tk()
 aken.geometry("550x200")
@@ -33,7 +52,12 @@ aken.title("Квадратные уравнения")
 aken.configure(bg="beige")
 
 # Add background picture
+original_bg = Image.open(r"bg.png")
+resized_bg = original_bg.resize((550, 200))
+bgimage=ImageTk.PhotoImage(resized_bg)
 
+labelBG=Label(aken, image=bgimage)
+labelBG.place(x=0, y=0)
 
 # Заголовок
 pealkiri = Label(aken, text="Решение квадратного уравнения", font=("Times New Roman", 20), fg="darkslategray", bg="lightgoldenrodyellow")
@@ -43,8 +67,13 @@ teine_rida = Frame(aken, bg="beige")
 
 # Поля ввода
 sisesta_a = Entry(teine_rida, font=("Times New Roman", 16), width=3)
+sisesta_a.bind("<KeyRelease>" ,entryColor)
+
 sisesta_b = Entry(teine_rida, font=("Times New Roman", 16), width=3)
+sisesta_b.bind("<KeyRelease>" ,entryColor)
+
 sisesta_c = Entry(teine_rida, font=("Times New Roman", 16), width=3)
+sisesta_c.bind("<KeyRelease>" ,entryColor)
 
 # Метки
 tekst1 = Label(teine_rida, text="x² +", font=("Times New Roman", 16), bg="beige")
