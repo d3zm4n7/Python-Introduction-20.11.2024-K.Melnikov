@@ -43,6 +43,20 @@ player_cards = []
 player_score = 0
 dealer_score = dealer_real_points
 
+def start_game():
+    global player_score
+    player_score = 0
+    for label in player_cards:
+        label.destroy()
+    player_cards.clear()
+    
+    for _ in range(2):
+        card, points, color = random_card()
+        player_score += points
+        label = Label(player_frame, text=card, font=("Arial", 18), width=5, height=2, bg="white", fg=color)
+        label.pack(side="left", padx=5)
+        player_cards.append(label)
+
 def võta_kaart():
     global player_score
     card, points, color = random_card()
@@ -83,8 +97,11 @@ def reset_game():
     player_cards.clear()
     dealer_card1.config(text="?", fg="black")
     dealer_card2.config(text=dealer_real_card, fg=dealer_real_color)
+    start_game()
 
+Button(window, text="Alusta mängu", font=("Arial", 14), command=start_game).pack(pady=10)
 Button(window, text="Võta kaart", font=("Arial", 14), command=võta_kaart).pack(pady=10)
 Button(window, text="Peatu", font=("Arial", 14), command=peatu).pack(pady=10)
 
+start_game()
 window.mainloop()
