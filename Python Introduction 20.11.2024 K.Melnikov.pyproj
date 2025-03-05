@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>emailli_saatmine.py</StartupFile>
+    <StartupFile>21.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,8 @@
   <ItemGroup>
     <Compile Include="emailli_saatmine.py" />
     <Compile Include="emailli_saatmine_def.py" />
+    <Compile Include="21.py" />
+    <Compile Include="21def.py" />
     <Compile Include="WORDLE.py" />
     <Compile Include="Ruutvorrandi_lahendamine_Matplotlib_def.py" />
     <Compile Include="Ruutvorrandi_lahendamine_%28Tkinter%29.py" />
@@ -66,6 +68,8 @@
     <Folder Include="Tund1\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TextFile1.txt" />
+    <Content Include="words.txt" />
     <Content Include="Tund8%28Sõnastikud%29\riigid_pealinnad.txt" />
   </ItemGroup>
   <ItemGroup>
