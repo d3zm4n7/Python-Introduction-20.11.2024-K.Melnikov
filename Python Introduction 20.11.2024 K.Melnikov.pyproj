@@ -24,6 +24,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="emailli_saatmine.py" />
+    <Compile Include="emailli_saatmine_def.py" />
+    <Compile Include="WORDLE.py" />
     <Compile Include="Ruutvorrandi_lahendamine_Matplotlib_def.py" />
     <Compile Include="Ruutvorrandi_lahendamine_%28Tkinter%29.py" />
     <Compile Include="Tund9%28Graafiline liides%29\Tund11%28Tkinter%29.py" />
