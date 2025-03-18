@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>21.py</StartupFile>
+    <StartupFile>BlackJack\bjbet.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BlackJack\bj2.py" />
+    <Compile Include="BlackJack\bjbet.py" />
     <Compile Include="emailli_saatmine.py" />
     <Compile Include="emailli_saatmine_def.py" />
     <Compile Include="21.py" />
@@ -57,6 +59,7 @@
     <Compile Include="Tund9%28Graafiline liides%29\module1.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="BlackJack\" />
     <Folder Include="Tund9%28Graafiline liides%29\" />
     <Folder Include="Tund8%28Sõnastikud%29\" />
     <Folder Include="Tund7%28Def%29\" />
