@@ -4,9 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b19a99de-3d81-4ff7-9b28-d55be16e43e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>BlackJack\bjbet.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <StartupFile>Tund10\db.py</StartupFile>
+    <SearchPath>21</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Python Introduction 20.11.2024 K.Melnikov</Name>
@@ -23,12 +22,17 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="21\21 - Copy.py" />
+    <Compile Include="21\21.py" />
+    <Compile Include="21\defs.py" />
     <Compile Include="BlackJack\bj2.py" />
     <Compile Include="BlackJack\bjbet.py" />
     <Compile Include="emailli_saatmine.py" />
     <Compile Include="emailli_saatmine_def.py" />
     <Compile Include="21.py" />
     <Compile Include="21def.py" />
+    <Compile Include="Tund10\code.py" />
+    <Compile Include="Tund10\db.py" />
     <Compile Include="WORDLE.py" />
     <Compile Include="Ruutvorrandi_lahendamine_Matplotlib_def.py" />
     <Compile Include="Ruutvorrandi_lahendamine_%28Tkinter%29.py" />
@@ -59,7 +63,9 @@
     <Compile Include="Tund9%28Graafiline liides%29\module1.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="21\" />
     <Folder Include="BlackJack\" />
+    <Folder Include="Tund10\" />
     <Folder Include="Tund9%28Graafiline liides%29\" />
     <Folder Include="Tund8%28Sõnastikud%29\" />
     <Folder Include="Tund7%28Def%29\" />
