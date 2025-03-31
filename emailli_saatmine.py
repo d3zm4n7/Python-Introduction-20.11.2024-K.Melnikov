@@ -1,13 +1,16 @@
 ﻿import tkinter as tk
-from tkinter import ttk, messagebox, filedialog
+from tkinter import ttk, messagebox, filedialog, OptionMenu
 import smtplib
 from email.message import EmailMessage
 import mimetypes
 import os
+import json
 
-attached_files = []
+
+
 auto_attachments = ["photo.jpg", "photo2.jpg"]  # или любой другой файл в папке со скриптом
 SIGNATURE = "\n\nBest regards,\nKerja 😎\nhttps://kirillmelnikov24.thkit.ee/wp/"
+SETTINGS_FILE = "settings.json"
 
 def add_attachments():
     files = filedialog.askopenfilenames(title="Vali failid")
@@ -19,6 +22,11 @@ def update_attachment_list():
     attachment_listbox.delete(0, tk.END)
     for file in attached_files:
         attachment_listbox.insert(tk.END, os.path.basename(file))
+
+def clear_attachments():
+    attached_files.clear()
+    update_attachment_list()
+    save_settings()
 
 def send_email_multi(sender, password, recipients_string, subject, body):
     recipient_list = [email.strip() for email in recipients_string.split(',') if email.strip()]
@@ -32,12 +40,14 @@ def send_email_multi(sender, password, recipients_string, subject, body):
     msg['To'] = ", ".join(recipient_list)
     msg.set_content(body)
 
-    # 📎 Авто-вложения
-    for file_path in auto_attachments:
+# Добавляем либо auto_attachments, либо attached_files (но не оба)
+    files_to_attach = attached_files if attached_files else auto_attachments
+
+    for file_path in files_to_attach:
         if os.path.exists(file_path):
             mime_type, _ = mimetypes.guess_type(file_path)
             mime_type = mime_type or 'application/octet-stream'
-            main_type, sub_type = mime_type.split('/', 1)
+            main_type, sub_type = mime_type.split('/', 1) 
             with open(file_path, 'rb') as f:
                 msg.add_attachment(f.read(),
                                    maintype=main_type,
@@ -111,46 +121,72 @@ def clear_fields():
     update_attachment_list()
 
 def apply_theme(theme_name):
-    if theme_name == "Standard":
-        root.configure(bg="#f2f2f2")
-        main_frame.configure(style="TFrame")
-        style.theme_use("default")
+    def set_all_styles(bg_root, bg_frame, fg, entry_bg="#ffffff", text_bg="#ffffff"):
+        root.configure(bg=bg_root)
 
-        style.configure("TLabel", background="#f2f2f2", foreground="#000000")
-        style.configure("TEntry", fieldbackground="#ffffff", foreground="#000000")
-        style.configure("TButton", background="#e6e6e6", foreground="#000000")
-        style.configure("TCheckbutton", background="#f2f2f2", foreground="#000000")
-        style.configure("TLabelframe", background="#f2f2f2", foreground="#000000")
-        body_text.configure(bg="#ffffff", fg="#000000", insertbackground="#000000")
-        attachment_listbox.configure(bg="#ffffff", fg="#000000")
-
-    elif theme_name == "Tume":
-        root.configure(bg="#121212")
-        main_frame.configure(style="Dark.TFrame")
         style.theme_use("clam")
 
-        style.configure("TLabel", background="#121212", foreground="#e0e0e0")
-        style.configure("TEntry", fieldbackground="#1e1e1e", foreground="#ffffff")
-        style.configure("TButton", background="#2a2a2a", foreground="#ffffff")
-        style.configure("TCheckbutton", background="#121212", foreground="#ffffff")
-        style.configure("TLabelframe", background="#1e1e1e", foreground="#ffffff")
-        body_text.configure(bg="#1e1e1e", fg="#ffffff", insertbackground="#ffffff")
-        attachment_listbox.configure(bg="#1e1e1e", fg="#ffffff")
+        # 👇 Создаём уникальный стиль для каждой темы
+        frame_style_name = f"{theme_name}.TFrame"
+        labelframe_style = f"{theme_name}.TLabelframe"
+        main_frame.configure(style=frame_style_name)
+        style.configure(frame_style_name, background=bg_frame)
+
+        style.configure("TLabel", background=bg_frame, foreground=fg)
+        style.configure("TEntry", fieldbackground=entry_bg, foreground=fg)
+        style.configure("TButton", background=entry_bg, foreground=fg)
+        style.configure("TCheckbutton", background=bg_frame, foreground=fg)
+        style.configure("TLabelframe", background=bg_frame, foreground=fg)
+        style.configure(labelframe_style, background=bg_frame, foreground=fg)
+        style.configure(f"{labelframe_style}.Label", background=bg_frame, foreground=fg)
+        body_text.configure(bg=text_bg, fg=fg, insertbackground=fg)
+        attachment_listbox.configure(bg=text_bg, fg=fg)
+        attachments_frame.configure(style=labelframe_style)
+
+        # Меняем OptionMenu цвета
+        theme_menu.config(bg=bg_frame, fg=fg, activebackground=bg_frame, activeforeground=fg, highlightthickness=0, borderwidth=0)
+        theme_menu["menu"].config(bg=bg_frame, fg=fg, activebackground=bg_frame, activeforeground=fg)
+
+    if theme_name == "Standard":
+        set_all_styles(bg_root="#f2f2f2", bg_frame="#ffffff", fg="#000000")
+
+    elif theme_name == "Tume":
+        set_all_styles(bg_root="#0e0e0e", bg_frame="#121212", fg="#e0e0e0", entry_bg="#1e1e1e", text_bg="#1e1e1e")
 
     elif theme_name == "Roosa":
-        root.configure(bg="#ffe6f0")
-        main_frame.configure(style="Pink.TFrame")
-        style.theme_use("default")
+        set_all_styles(bg_root="#fddde6", bg_frame="#ffe6f0", fg="#800040", entry_bg="#ffffff", text_bg="#fff0f5")
 
-        style.configure("TLabel", background="#ffe6f0", foreground="#800040")
-        style.configure("TEntry", fieldbackground="#ffffff", foreground="#800040")
-        style.configure("TButton", background="#ffb3d9", foreground="#800040")
-        style.configure("TCheckbutton", background="#ffe6f0", foreground="#800040")
-        style.configure("TLabelframe", background="#ffe6f0", foreground="#800040")
-        body_text.configure(bg="#fff0f5", fg="#800040", insertbackground="#800040")
-        attachment_listbox.configure(bg="#fff0f5", fg="#800040")
+    elif theme_name == "Sinine":
+        set_all_styles(bg_root="#d6ebff", bg_frame="#e6f2ff", fg="#003366", entry_bg="#ffffff")
+
+    elif theme_name == "Roheline":
+        set_all_styles(bg_root="#dcedc8", bg_frame="#e8f5e9", fg="#1b5e20", entry_bg="#ffffff")
+
+    elif theme_name == "Monokroomne":
+        set_all_styles(bg_root="#c0c0c0", bg_frame="#dcdcdc", fg="#2e2e2e", entry_bg="#f0f0f0", text_bg="#f0f0f0")
 
 
+
+def save_settings():
+    settings = {
+        "theme": current_theme.get(),
+        "attachments": attached_files,
+        "sender": sender_entry.get(),
+        "recipients": recipient_entry.get(),
+        "subject": subject_entry.get(),
+        "body": body_text.get("1.0", tk.END).strip()
+    }
+    with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
+        json.dump(settings, f, indent=4)
+
+def load_settings():
+    if os.path.exists(SETTINGS_FILE):
+        try:
+            with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
 
 # --- GUI ---
 root = tk.Tk()
@@ -208,24 +244,51 @@ ttk.Button(attachments_frame, text="📎Lisa manused", command=add_attachments).
 attachment_listbox = tk.Listbox(attachments_frame, height=4, width=60)
 attachment_listbox.grid(row=1, column=0, pady=5)
 
+ttk.Button(attachments_frame, text="Eemalda kõik manused", command=clear_attachments).grid(row=0, column=1, padx=5)
+
 # 📤 Кнопка отправки
-ttk.Checkbutton(main_frame, text="Lisa allkiri", variable=include_signature).grid(row=6, column=0, columnspan=1, sticky="w", padx=5)
-ttk.Button(main_frame, text="Saada kiri", command=send_multi_direct).grid(row=6, column=1, columnspan=2, pady=15)
+ttk.Checkbutton(main_frame, text="Lisa allkiri", variable=include_signature).grid(row=8, column=0, columnspan=1, sticky="w", padx=5)
+ttk.Button(main_frame, text="Saada kiri", command=send_multi_direct).grid(row=8, column=1, columnspan=2, pady=15)
+
+theme_options = ["Standard", "Tume", "Roosa", "Sinine", "Roheline", "Monokroomne"]
+# Загружаем настройки
+loaded_settings = load_settings()
+
+# Тема
+initial_theme = loaded_settings.get("theme", "Standard")
+current_theme = tk.StringVar(value=initial_theme)
+
+# Вложения
+attached_files = loaded_settings.get("attachments", [])
+update_attachment_list()
+
+# Восстановим текстовые поля
+sender_entry.delete(0, tk.END)
+sender_entry.insert(0, loaded_settings.get("sender", ""))
+
+recipient_entry.delete(0, tk.END)
+recipient_entry.insert(0, loaded_settings.get("recipients", ""))
+
+subject_entry.delete(0, tk.END)
+subject_entry.insert(0, loaded_settings.get("subject", ""))
+
+body_text.delete("1.0", tk.END)
+body_text.insert("1.0", loaded_settings.get("body", ""))
+include_signature.set(loaded_settings.get("signature", True))
+ 
+
+ttk.Label(main_frame, text="Vali teema:").grid(row=9, column=0, sticky="e", padx=5)
+theme_menu = OptionMenu(main_frame, current_theme, "Standard", "Tume", "Roosa", "Sinine", "Roheline", "Monokroomne", command=lambda t: apply_theme(t))
+theme_menu.grid(row=9, column=1, sticky="w", padx=5)
 
 ttk.Button(main_frame, text="Täida näidis", command=fill_example).grid(row=7, column=0, pady=(5, 10))
 ttk.Button(main_frame, text="Tühjenda vorm", command=clear_fields).grid(row=7, column=1, pady=(5, 10))
 
-current_theme = tk.StringVar(value="Standard")  # Начальная тема
 
-ttk.Label(main_frame, text="Vali teema:").grid(row=9, column=0, sticky="e", padx=5)
-theme_menu = ttk.OptionMenu(main_frame, current_theme, "Standard", "Standard", "Tume", "Roosa", command=lambda t: apply_theme(t))
-theme_menu.grid(row=9, column=1, sticky="w", padx=5)
-
-
-
+update_attachment_list()
 
 
 # 💾 Сохраняем черновик при выходе
-root.protocol("WM_DELETE_WINDOW", lambda: [save_draft(), root.destroy()])
+root.protocol("WM_DELETE_WINDOW", lambda: [save_draft(), save_settings(), root.destroy()])
 apply_theme(current_theme.get())
 root.mainloop()
